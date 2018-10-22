@@ -45,7 +45,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <input type="submit" name="submit" class="btn btn-primary btn-block btn-flat" value="Registrarse">
+          <input type="submit" name="submit" class="btn btn-primary btn-block btn-flat" value="Acceder">
         </div>
         <!-- /.col -->
       </div>

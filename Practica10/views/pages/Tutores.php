@@ -103,13 +103,14 @@ if($_SESSION["tipo"] == 0){
                 <tr>
                   <th>Id Empleado</th>
                   <th>Nombre Completo</th>
-                  <th>Carrera</th>
                   <th>Email</th>
+                  <th>Editar</th>
                   <th>Eliminar</th>
                   <th>Ver</th>
                 </tr>
                 </thead>
                 <tbody>
+
                 <?php
                   $mvc = new mvc_controller();
                   $mvc -> VistaTutorC();

@@ -58,9 +58,9 @@
             echo' <option value="'.$item["matricula"].'"> '.$item["nombre"].' '.$item["apellido"].' </option>';
          }
        }
-    }  
-      
-    
+    }
+   
+
     #----------------------------A L U M N O S------------------------------#
     #Se visualiza los datos de los alumnos en la tablas 
     public function VistaAlumnosC(){
@@ -524,12 +524,12 @@
           if($respuesta["email"] == $email && $respuesta["password"] == $_POST["password"]){
             if(isset($_GET["idBorrar"])){
               $datosController = $_GET["idBorrar"];
-               $carpeta = Datos::borrarDatosM($datosController, "profesor");
+               $carpeta = Datos::InfoModel($datosController, "profesor");
                 $ruta=$carpeta["imagen"];
                   if($ruta != "views/ImagenesT/no-imagen.jpg"){
                   unlink($ruta);
                 }
-              $respuesta = Datos::borrarAlumnoM($datosController, "profesor");
+              $respuesta = Datos::borrarDatosM($datosController, "profesor");
               if($respuesta == "success"){
                  echo'<script> window.location.replace("index.php?action=Tutores"); </script>';
              }
@@ -975,11 +975,8 @@
                <td>'.$item["fecha"].'</td>
                <td>'.$item["hora"].'</td>
             </tr>';
-      } 
- 
-
-     
-      }
+        }
+    }
     
     #Se logea el usuario
     public function ingresoUsuarioController(){

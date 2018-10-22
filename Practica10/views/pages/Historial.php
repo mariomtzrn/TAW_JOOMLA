@@ -33,6 +33,7 @@ if($_SESSION["tipo"] == 0){
                 </tr>
                 </thead>
                 <tbody>
+                  
                 <?php
                   $mvc = new mvc_controller();
                   $mvc -> VistarHistorialC();

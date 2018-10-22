@@ -423,7 +423,7 @@ session_start();
       "autoWidth": false
       
     });
-  });
+}); 
 </script>
 </body>
 <!-- Page script -->

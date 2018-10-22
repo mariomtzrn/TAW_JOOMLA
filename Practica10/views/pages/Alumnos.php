@@ -121,7 +121,7 @@ if($_SESSION["tipo"] == 0){
                 <tr>
                   <th>Matricula</th>
                   <th>Nombre Completo</th>
-                  <th>Carrera</th>
+                <th>Carrera</th>
                   <th>Tutor</th>
                   <?php
                   if($_SESSION["tipo"]==0){
@@ -135,6 +135,7 @@ if($_SESSION["tipo"] == 0){
                 </tr>
                 </thead>
                 <tbody>
+                  
                 <?php
                   $mvc = new mvc_controller();
                   $mvc -> VistaAlumnosC();

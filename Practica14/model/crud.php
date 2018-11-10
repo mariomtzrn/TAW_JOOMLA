@@ -106,7 +106,7 @@ class Datos extends Conexion {
 		$stmt->close();
 
     }
-     #--------------------------------------H O R A R I O S-----------------------------------
+     #--------------------------------------V I S I T A S -----------------------------------
     public function registroVisitaM($datosModel, $tabla){
 		//prepara la conexion a la base de datos y prepara ls entencia SQL 
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (id, id_usuario, fecha, hora, dia )
@@ -117,6 +117,27 @@ class Datos extends Conexion {
 		$stmt->bindParam(":dia", $datosModel["dia"], PDO::PARAM_STR);
 		$stmt->bindParam(":fecha", $datosModel["fecha"]);
     $stmt->bindParam(":hora", $datosModel["hora"]);
+		if($stmt->execute()){
+			return "success";
+		}
+		else{
+			return "error";
+		}
+		$stmt->close();
+
+    }
+  
+       #--------------------------------------V I S I T A S -----------------------------------
+    public function registroPromocionM($datosModel, $tabla){
+		//prepara la conexion a la base de datos y prepara ls entencia SQL 
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (id, visitas, nombre, descripcion, fecha )
+		 VALUES (:id, :visitas, :nombre, :descripcion, :dia)");	
+		//Inserta los valores del array en las varaibles que se utlizan para hacer la inserccion y se ejecuta la
+		$stmt->bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
+    $stmt->bindParam(":visitas", $datosModel["visitas"], PDO::PARAM_INT);
+		$stmt->bindParam(":fecha", $datosModel["fecha"]);
+		$stmt->bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
+    $stmt->bindParam(":descripcion", $datosModel["descripcion"], PDO::PARAM_STR);
 		if($stmt->execute()){
 			return "success";
 		}

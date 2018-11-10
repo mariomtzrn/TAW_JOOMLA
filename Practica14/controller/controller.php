@@ -242,7 +242,7 @@
           $respuesta = Datos::registroVisitaM($datosController, "visitas");
           //se imprime la respuesta en la vista $imagen
           if($respuesta == "success"){
-            echo'<script> window.location.replace("index.php?action=Horarios"); </script>';
+            echo'<script> window.location.replace("index.php?action=Perfil"); </script>';
           }
           else{
             echo'<script> alert("ERROR") </script>';
@@ -281,10 +281,10 @@
                                 "fecha"=>$fecha,"visitas"=>$_POST["visitas"]);
       //Se le dice al modelo models/crud.php (Datos::registroUsuarioModel),que en la clase "Datos",
       $print=print_r($datosController);
-      $respuesta = Datos::registroUsuarioM($datosController, "usuarios");
+      $respuesta = Datos::registroPromocionM($datosController, "promociones");
       //se imprime la respuesta en la vista $imagen
       if($respuesta == "success"){
-        echo'<script> window.location.replace("index.php?action=usuarios"); </script>';
+        echo'<script> window.location.replace("index.php?action=Promociones"); </script>';
       }
       else{
         echo'<script> alert($print) </script>';
